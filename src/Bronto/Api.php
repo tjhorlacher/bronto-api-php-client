@@ -10,7 +10,7 @@ class Bronto_Api
     /** URI */
     const BASE_WSDL     = 'https://api.bronto.com/v4?wsdl';
     const BASE_LOCATION = 'https://api.bronto.com/v4';
-    const BASE_URL      = 'http://api.bronto.com/v4';
+    const BASE_URL      = 'https://api.bronto.com/v4';
 
     /**
      * @var SoapClient
@@ -45,7 +45,7 @@ class Bronto_Api
         'trace'              => false,
         'exceptions'         => true,
         'cache_wsdl'         => WSDL_CACHE_BOTH,
-        'user_agent'         => 'Bronto_Api <https://github.com/leek/bronto_service>',
+        'user_agent'         => 'Bronto_Api <https://github.com/tjhorlacher/bronto-api-php-client>',
         'features'           => SOAP_SINGLE_ELEMENT_ARRAYS,
         'connection_timeout' => 30,
     );
