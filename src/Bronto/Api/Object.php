@@ -334,6 +334,11 @@ abstract class Bronto_Api_Object
                 $this->_lastRequestMethod = $method;
                 $this->_lastRequestData   = $data;
 
+                // rekey list array
+                if (isset($data[0]['listIds']) && is_array($data[0]['listIds'])) {
+                    $data[0]['listIds'] = array_values($data[0]['listIds']);
+                }
+                
                 // Attempt
                 $client = $this->getApi()->getSoapClient();
                 $result = $client->$method($data);
