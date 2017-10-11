@@ -136,7 +136,8 @@ class Bronto_Api_Rowset_Iterator implements Iterator, Countable
                                 $this->_nextParamValues[$queryParam] = Bronto_Api_Object::DIRECTION_NEXT;
                                 break;
                             case 'pageNumber':
-                                $this->_nextParamValues[$queryParam] = $subvalue + 1;
+                                //$this->_nextParamValues[$queryParam] = $subvalue + 1;
+                                $this->_nextParamValues[$queryParam] = (is_numeric($subvalue) ? $subvalue + 1 : 1);
                                 break;
                             default:
                                 $this->_nextParamValues[$queryParam] = $subvalue;
